@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج الطلاب</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>نتائج الطلاب</h1>
+        <form id="gender-form">
+            <label for="gender">اختر الجنس:</label>
+            <select id="gender" name="gender">
+                <option value="male">ذكر</option>
+                <option value="female">أنثى</option>
+            </select>
+            <button type="submit">التالي</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('gender-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var gender = document.getElementById('gender').value;
+            window.location.href = `branch.html?gender=${gender}`;
+        });
+    </script>
+</body>
+</html>

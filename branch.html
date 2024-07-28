@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج الطلاب</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>نتائج الطلاب</h1>
+        <form id="branch-form">
+            <label for="branch">اختر الشعبة:</label>
+            <select id="branch" name="branch">
+                <option value="science">علمي</option>
+                <option value="literature">أدبي</option>
+            </select>
+            <button type="submit">التالي</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('branch-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var urlParams = new URLSearchParams(window.location.search);
+            var gender = urlParams.get('gender');
+            var branch = document.getElementById('branch').value;
+            window.location.href = `result.html?gender=${gender}&branch=${branch}`;
+        });
+    </script>
+</body>
+</html>
